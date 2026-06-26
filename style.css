@@ -1,0 +1,1140 @@
+/* Theme colours, fonts, and spacing for the portfolio. */
+
+/* Shared values for colours, fonts, and spacing. */
+:root {
+    /* Colours */
+    --void:    #0A0A0A;
+    --deep:    #111111;
+    --surface: #1A1A1A;
+    --card:    #242424;
+    --border:  #2E2E2E;
+    --yellow:  #FFD600;
+    --pink:    #FF2D78;
+    --white:   #F0F0F0;
+    --gray:    #888888;
+
+    /* Typography */
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body:    'Inter', sans-serif;
+    --font-mono:    'Space Mono', monospace;
+
+    /* Spacing */
+    --section-pad: 100px;
+}
+
+/* Basic reset and a few default page styles. */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--deep);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden; /* keeps the page from scrolling sideways */
+}
+
+/* Handy colour helpers for inline text. */
+.yellow { color: var(--yellow); }
+.pink   { color: var(--pink);   }
+
+/* Sticky top nav with a simple hamburger menu. */
+
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 1000;
+    /* Gradient fades to transparent so content below shows through when scrolled */
+    background: linear-gradient(to bottom, rgba(10,10,10,0.97) 0%, transparent 100%);
+}
+
+/* The small logo in the top left. */
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+/* The little yellow dot in the logo. */
+.logo-dot {
+    color: var(--yellow);
+}
+
+/* The hamburger button. */
+.nav-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 4px;
+    z-index: 1001; /* stays above overlay */
+}
+
+/* The three bars that make up the icon. */
+.nav-toggle span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--white);
+    transition: all 0.3s ease;
+}
+
+/* Opens into an X when the menu is active. */
+.nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Full-screen menu that appears when the button is pressed. */
+
+.nav-overlay {
+    position: fixed;
+    inset: 0;              /* shorthand for top/right/bottom/left: 0 */
+    background: var(--void);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Hidden by default */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Added by JS when the menu opens. */
+.nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* The close button inside the overlay. */
+.nav-close {
+    position: absolute;
+    top: 24px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.nav-close:hover { color: var(--yellow); }
+
+/* The links in the menu. */
+.overlay-menu {
+    list-style: none;
+    text-align: center;
+}
+
+/* Big menu links. */
+.overlay-link {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);  /* fluid size: min 3rem, max 6rem */
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 6px;
+    display: block;
+    padding: 6px 0;
+    transition: color 0.2s ease, letter-spacing 0.2s ease;
+}
+
+.overlay-link:hover {
+    color: var(--yellow);
+    letter-spacing: 10px; /* spreads out on hover */
+}
+
+/* Small label at the bottom of the overlay. */
+.overlay-deco {
+    position: absolute;
+    bottom: 40px;
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 3.5vw, 2rem);
+    color: var(--surface);   /* very subtle — almost invisible */
+    letter-spacing: 12px;
+    user-select: none;
+}
+
+/* Home page hero. */
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 40px 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft grid texture behind the hero. */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,214,0,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,214,0,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+/* Little label above the headline. */
+.hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gray);
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Stacked headline layout. */
+.hero-headline {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.88;
+    margin-bottom: 32px;
+}
+
+/* Each line in the big headline. */
+.headline-line {
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 15vw, 11rem); /* scales with viewport width */
+    letter-spacing: 4px;
+    display: block;
+}
+
+.headline-line.yellow { color: var(--yellow); }
+.headline-line.pink   { color: var(--pink);   }
+.headline-line.white  { color: var(--white);  }
+
+/* Small stack line under the hero text. */
+.hero-sub {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--gray);
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+}
+
+/* Main call-to-action button. */
+.cta-btn {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--void);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    padding: 14px 44px;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    align-self: flex-start; /* don't stretch to full width */
+}
+
+.cta-btn:hover {
+    background: var(--pink);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Secondary button used in a few places. */
+.outline-btn {
+    display: inline-block;
+    border: 2px solid var(--yellow);
+    color: var(--yellow);
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    padding: 12px 40px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.outline-btn:hover {
+    background: var(--yellow);
+    color: var(--void);
+}
+
+/* Little tags under the hero button. */
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 56px;
+}
+
+.tag-badge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    text-transform: uppercase;
+}
+
+.yellow-tag { background: rgba(255,214,0,0.08);  color: var(--yellow); border: 1px solid rgba(255,214,0,0.4); }
+.pink-tag   { background: rgba(255,45,120,0.08); color: var(--pink);   border: 1px solid rgba(255,45,120,0.4); }
+.white-tag  { background: rgba(240,240,240,0.04); color: var(--gray);  border: 1px solid var(--border); }
+
+/* Shared section styling used across the site. */
+
+/* Tiny label above section titles. */
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--yellow);
+    letter-spacing: 5px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+/* Main section heading. */
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* Intro text under the section heading. */
+.section-sub {
+    color: var(--gray);
+    font-size: 0.95rem;
+    max-width: 560px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* Mini football game on the home page. */
+
+.game-section {
+    padding: var(--section-pad) 0;
+    background: var(--void);
+    text-align: center;
+}
+
+/* Score display above the canvas. */
+.game-score-display {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 24px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--yellow);
+    letter-spacing: 3px;
+}
+
+/* The game canvas. */
+#footballCanvas {
+    display: block;
+    margin: 0 auto;
+    border: 2px solid var(--border);
+    cursor: crosshair;
+    max-width: 100%;   /* responsive — shrinks on smaller screens */
+    height: auto;
+}
+
+/* Message shown under the canvas. */
+.game-message {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    min-height: 50px;  /* fixed height prevents layout jump */
+    transition: color 0.3s ease;
+}
+
+/* Button shown after a win. */
+.game-reset-btn {
+    margin-top: 16px;
+    background: none;
+    border: 2px solid var(--pink);
+    color: var(--pink);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    padding: 12px 36px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.game-reset-btn:hover {
+    background: var(--pink);
+    color: var(--white);
+}
+
+/* Short intro and quick stats on the home page. */
+
+.bio-teaser-section {
+    padding: var(--section-pad) 0;
+    background: var(--surface);
+}
+
+.bio-text {
+    color: var(--gray);
+    font-size: 1rem;
+    line-height: 1.85;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+/* Two-by-two grid for the stats. */
+.stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;         /* tiny gap creates the "tile" look */
+}
+
+.stat-card {
+    background: var(--card);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-num {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    letter-spacing: 2px;
+    display: block;
+}
+
+.stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gray);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Smaller hero used on the inner pages. */
+
+.page-hero {
+    min-height: 55vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 120px 40px 60px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft pink grid behind the inner-page hero. */
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,45,120,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,45,120,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+/* Tiny label above the page title. */
+.page-hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--pink);
+    letter-spacing: 5px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+/* Large page title. */
+.page-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 12vw, 10rem);
+    letter-spacing: 4px;
+    line-height: 1;
+    color: var(--white);
+}
+
+.page-hero-title span { color: var(--yellow); }
+
+/* About page layout. */
+
+.about-story {
+    padding: var(--section-pad) 0;
+    background: var(--deep);
+}
+
+/* Main story text. */
+.story-text {
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--gray);
+    max-width: 620px;
+}
+
+.story-text strong { color: var(--white); }
+
+/* Tools and skills section. */
+.skills-section {
+    padding: var(--section-pad) 0;
+    background: var(--surface);
+}
+
+/* Responsive grid for the skill tiles. */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 2px;
+    margin-top: 40px;
+}
+
+/* One skill tile. */
+.skill-tile {
+    background: var(--card);
+    padding: 28px 16px;
+    text-align: center;
+    transition: background 0.2s ease;
+    cursor: default;
+}
+
+.skill-tile:hover { background: var(--border); }
+
+/* Icon inside each skill tile. */
+.skill-icon-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;   /* keeps logo proportions, no cropping */
+    margin-bottom: 12px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Slight desaturate at rest — pops to full colour on hover */
+    filter: grayscale(30%) brightness(0.9);
+    transition: filter 0.25s ease;
+}
+
+.skill-tile:hover .skill-icon-img {
+    filter: grayscale(0%) brightness(1.1);
+}
+
+/* Skill name. */
+.skill-name {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--gray);
+    text-transform: uppercase;
+}
+
+/* Things I’m into section. */
+.passions-section {
+    padding: var(--section-pad) 0;
+    background: var(--void);
+}
+
+.passions-list {
+    list-style: none;
+    margin-top: 40px;
+}
+
+/* One row in the list. */
+.passion-item {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    gap: 32px;
+    transition: padding-left 0.2s ease;
+}
+
+.passion-item:hover {
+    padding-left: 12px; /* subtle indent on hover */
+}
+
+.passion-number {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--gray);
+    letter-spacing: 2px;
+    min-width: 36px;
+}
+
+.passion-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    letter-spacing: 2px;
+    flex: 1;
+}
+
+.passion-accent { color: var(--yellow); }
+.passion-accent-pink { color: var(--pink); }
+
+.passion-desc {
+    font-size: 0.8rem;
+    color: var(--gray);
+    max-width: 260px;
+    text-align: right;
+    line-height: 1.5;
+}
+
+/* Projects page. */
+
+.projects-section {
+    padding: var(--section-pad) 0;
+    background: var(--deep);
+}
+
+/* One project card. */
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    border-color: var(--yellow);
+    transform: translateY(-5px);
+}
+
+.project-card.pink-hover:hover {
+    border-color: var(--pink);
+}
+
+/* Colour accent at the top of the card. */
+.project-card-accent {
+    height: 4px;
+    background: var(--yellow);
+    flex-shrink: 0;
+}
+
+.project-card-accent.pink { background: var(--pink); }
+
+/* Card contents. */
+.project-card-body {
+    padding: 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tech tags at the top of the card. */
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.project-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    text-transform: uppercase;
+}
+
+/* Project title. */
+.project-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+}
+
+/* Short project description. */
+.project-desc {
+    color: var(--gray);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    margin-bottom: 24px;
+    flex: 1;
+}
+
+/* Link/button for opening the project. */
+.project-link {
+    /* --- Reset browser button defaults --- */
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    outline: none;
+
+    /* --- Custom styling --- */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--yellow);
+    text-decoration: none;
+    text-transform: uppercase;
+    align-self: flex-start;
+
+    /* Underline drawn via border-bottom on a pseudo element
+       so it only spans the text width */
+    border-bottom: 1px solid rgba(255, 214, 0, 0.4);
+    padding-bottom: 4px;
+
+    transition: color 0.2s ease,
+                border-color 0.2s ease,
+                letter-spacing 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--pink);
+    border-color: rgba(255, 45, 120, 0.4);
+    letter-spacing: 5px; /* subtle spread on hover */
+}
+
+/* Contact page. */
+
+.contact-section {
+    padding: var(--section-pad) 0;
+    background: var(--deep);
+}
+
+/* Form styling to match the dark theme. */
+.contact-form .form-control,
+.contact-form textarea.form-control {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0;        /* square edges — matches the design */
+    color: var(--white);
+    font-family: var(--font-body);
+    padding: 14px 16px;
+    transition: border-color 0.2s;
+}
+
+/* Focus state for the inputs. */
+.contact-form .form-control:focus,
+.contact-form textarea.form-control:focus {
+    background: var(--surface);
+    border-color: var(--yellow);
+    color: var(--white);
+    box-shadow: none;         /* remove Bootstrap default blue glow */
+    outline: none;
+}
+
+/* Labels above the form fields. */
+.contact-form label {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+    color: var(--gray);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Submit button. */
+.form-submit-btn {
+    width: 100%;
+    background: var(--yellow);
+    color: var(--void);
+    border: none;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    padding: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.form-submit-btn:hover {
+    background: var(--pink);
+    color: var(--white);
+}
+
+/* Message shown after a successful submit. */
+.form-success {
+    display: none;   /* hidden until form submitted */
+    background: rgba(255,214,0,0.1);
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    padding: 16px;
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* Contact info box beside the form. */
+.contact-info {
+    background: var(--surface);
+    padding: 40px;
+    height: 100%;
+}
+
+.contact-info-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 32px;
+}
+
+/* One line of contact info. */
+.contact-detail {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-detail:last-child {
+    border-bottom: none;
+}
+
+.contact-detail-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gray);
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.contact-detail-value {
+    font-size: 1rem;
+    color: var(--white);
+}
+
+/* Shared footer. */
+
+.site-footer {
+    background: var(--void);
+    border-top: 1px solid var(--border);
+    padding: 32px 0;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+}
+
+.footer-copy {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gray);
+    letter-spacing: 2px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-links a {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--gray);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover { color: var(--yellow); }
+
+/* Mobile tweaks. */
+
+@media (max-width: 768px) {
+
+    :root {
+        --section-pad: 64px; /* tighter sections on mobile */
+    }
+
+    .site-nav {
+        padding: 16px 20px;
+    }
+
+    .hero-section {
+        padding: 100px 20px 40px;
+    }
+
+    /* Hide the floating tags on small screens. */
+    .hero-tags {
+        display: none;
+    }
+
+    .page-hero {
+        padding: 100px 20px 40px;
+    }
+
+    /* Stack contact info on smaller screens. */
+    .contact-info {
+        margin-top: 32px;
+    }
+
+    /* Let the passion text sit full width. */
+    .passion-desc {
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* Give the stat grid a bit more space. */
+    .stat-grid {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Make the passion rows stack on very small screens. */
+    .passion-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .passion-desc {
+        display: none; /* hide descriptions on tiny screens */
+    }
+}
+
+
+/* Project slideshow lightbox for the projects page. */
+
+
+/* Full-screen overlay. */
+.slideshow-lightbox {
+    position: fixed;           
+    inset: 0;                  
+    z-index: 9999;             
+    display: flex;             
+    align-items: center;
+    justify-content: center;
+    padding: 20px;             
+}
+
+
+/* Dark backdrop behind the lightbox. */
+.slideshow-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85); 
+    cursor: pointer;                  
+}
+
+
+/* The lightbox panel itself. */
+.slideshow-panel {
+    position: relative;           
+    z-index: 1;
+    background: var(--card);      
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 100%;
+    max-width: 820px;             
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* Header row with the title and close button. */
+.slideshow-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.slideshow-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--white);
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+/* Close button. */
+.slideshow-close {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--gray);
+    font-size: 1.1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    cursor: pointer;
+    flex-shrink: 0;            
+    transition: color 0.2s, border-color 0.2s;
+}
+.slideshow-close:hover {
+    color: var(--white);
+    border-color: var(--yellow);
+}
+
+
+/* Image area. */
+.slideshow-image-wrap {
+    position: relative;         
+    background: var(--void);    
+    border-radius: 2px;
+    overflow: hidden;
+    min-height: 300px;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The screenshot itself. */
+.slideshow-img {
+    display: block;
+    max-width: 100%;
+    max-height: 460px;
+    object-fit: contain;        /* letterbox rather than crop */
+}
+
+/* Fallback text if there’s no image yet. */
+.slideshow-no-img {
+    color: var(--gray);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0;
+}
+
+
+/* Previous and next arrows. */
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-size: 2rem;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    border-radius: 2px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+.slideshow-arrow:hover {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--void);
+}
+.slideshow-arrow.left  { left:  10px; }
+.slideshow-arrow.right { right: 10px; }
+
+
+/* Dot indicators for the slideshow. */
+.slideshow-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* One dot button. */
+.slide-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 1px;         /* slightly square, matches the portfolio's angular aesthetic */
+    background: var(--border);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+.slide-dot.active {
+    background: var(--yellow);
+    transform: scale(1.3);
+}
+
+
+/* Counter text like 2 / 5. */
+.slideshow-counter {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gray);
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+
+/* Smaller padding on mobile. */
+@media (max-width: 576px) {
+    .slideshow-panel {
+        padding: 16px;
+    }
+    .slideshow-title {
+        font-size: 1.2rem;
+    }
+    .slideshow-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.5rem;
+    }
+}
+
+
+.project-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    padding: 10px 16px;
+    text-transform: uppercase;
+    background: rgba(255, 214, 0, 0.06);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 214, 0, 0.8);
+}

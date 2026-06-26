@@ -1,0 +1,53 @@
+REFERENCES — Thapelo Thoke | Portfolio Website (Assignment 03)
+
+
+Adobe. (n.m.). Adobe Premiere logo [Logotype]. Logo-Teka. https://logo-teka.com/en/adobe-premiere/
+
+Audacity Team. (2019). Audacity logo [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Audacity_Logo.svg
+
+Bootstrap Team. (2021). Bootstrap logo [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Bootstrap_logo.svg
+
+Canva. (n.m.). Canva logo [Logotype]. Logo-Teka. https://logo-teka.com/en/canva/
+
+Figma Inc. (2016). Figma logo [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Figma-logo.svg
+
+Krita Foundation. (2012). Calligrakrita-base logo [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Calligrakrita-base.svg
+
+Microsoft Corporation. (2020). Csharp logo [Digital image]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Csharp_Logo.png
+
+Serif Europe. (2022). Affinity (App) logo [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:Affinity_%28App%29_Logo.svg
+
+The Blackmagic Design Team. (2021). DaVinci Resolve Studio logo [Digital image]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:DaVinci_Resolve_Studio.png
+
+World Wide Web Consortium. (2011a). CSS3 logo [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:CSS3_logo.svg
+
+World Wide Web Consortium. (2011b). HTML5 logo and wordmark [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:HTML5_logo_and_wordmark.svg
+
+Xavier, T. (2018). VR logo Virtual Reality logo [Vector graphic]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:VR_Logo_Virtual_Reality_Logo.svg
+
+Yanchenko, A. (2014). JavaScript-logo [Digital image]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:JavaScript-logo.png
+
+Zhu, J. (2022). AR LOGO 2 [Digital image]. Wikimedia Commons. https://commons.wikimedia.org/wiki/File:AR_LOGO_2.jpg
+
+
+
+
+FONTS
+
+Bebas Neue
+Purpose: Display / headline font (condensed, bold)
+Source:  Google Fonts — https://fonts.google.com/specimen/Bebas+Neue
+License: SIL Open Font License 1.1
+
+Inter
+Purpose: Body copy font (clean, readable at small sizes)
+Source:  Google Fonts — https://fonts.google.com/specimen/Inter
+License: SIL Open Font License 1.1
+
+Space Mono
+Purpose: Labels, tags, monospaced data text
+Source:  Google Fonts — https://fonts.google.com/specimen/Space+Mono
+License: SIL Open Font License 1.1
+
+
+

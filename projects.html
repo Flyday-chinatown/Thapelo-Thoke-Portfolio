@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Thapelo Thoke</title>
+
+    <!-- Fonts for the site -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Scroll animation styles -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Extra button styling for the project cards -->
+    <style>
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .project-btn {
+            border: 1px solid var(--yellow);
+            background: transparent;
+            color: var(--yellow);
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-btn:hover {
+            background: var(--yellow);
+            color: var(--void);
+            transform: translateY(-2px);
+        }
+
+        .project-btn.pink-btn {
+            border-color: var(--pink);
+            color: var(--pink);
+        }
+
+        .project-btn.pink-btn:hover {
+            background: var(--pink);
+            color: var(--white);
+        }
+
+        .project-btn.live-btn {
+            background: var(--yellow);
+            color: var(--void);
+            border-color: var(--yellow);
+        }
+
+        .project-btn.live-btn:hover {
+            background: var(--pink);
+            border-color: var(--pink);
+            color: var(--white);
+        }
+
+        .project-card-body .project-actions {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <a href="index.html" class="nav-logo">TT<span class="logo-dot">.</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true">
+        <button class="nav-close" id="navClose" aria-label="Close navigation menu">✕</button>
+        <ul class="overlay-menu">
+            <li><a href="index.html"    class="overlay-link">Home</a></li>
+            <li><a href="about.html"    class="overlay-link">About</a></li>
+            <li><a href="projects.html" class="overlay-link">Projects</a></li>
+            <li><a href="contact.html"  class="overlay-link">Contact</a></li>
+        </ul>
+        <div class="overlay-deco" aria-hidden="true">THAPELO THOKE</div>
+    </div>
+
+
+    <!-- Page hero -->
+    <header class="page-hero">
+        <div class="container">
+            <p class="page-hero-label">What I've built</p>
+            <h1 class="page-hero-title">
+                MY <span>WORK</span>
+            </h1>
+        </div>
+    </header>
+
+
+    <!-- Projects grid -->
+    <section class="projects-section">
+        <div class="container">
+
+            <div class="section-label" data-aos="fade-up">All Projects</div>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                THE <span class="yellow">FULL ROSTER</span>
+            </h2>
+            <p class="section-sub" data-aos="fade-up" data-aos-delay="150">
+                This page is ordered like a UI progression timeline: the earliest and rougher interface work starts at the top, while the stronger, more polished UI projects sit closer to the bottom.
+            </p>
+
+            <div class="row g-3 mt-2">
+
+                <!-- Project 1 -->
+                <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="0">
+                    <article class="project-card pink-hover">
+                        <div class="project-card-accent pink"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">Unity</span>
+                                <span class="project-tag">C#</span>
+                                <span class="project-tag">3D</span>
+                                <span class="project-tag">Team Project</span>
+                                <span class="project-tag">SAE Comic Con 2024</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                IT'S JUST A <span class="pink">RAGE GAME</span>
+                            </h3>
+
+                            <p class="project-desc">
+                                A rage-platformer project I worked on with a friend. It started as a chaotic challenge game and grew enough to be shown at SAE's Comic Con display in 2024. The UI is intentionally kept early in the roster because this page is ordered from my rougher UI work toward my strongest interface work.
+                            </p>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-btn pink-btn slideshow-trigger" data-project="rage-game" data-title="It's Just a Rage Game">
+                                    View Project →
+                                </button>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <!-- Project 2 -->
+                <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <article class="project-card">
+                        <div class="project-card-accent"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">Unity</span>
+                                <span class="project-tag">C#</span>
+                                <span class="project-tag">Golf Game</span>
+                                <span class="project-tag">Atmospheric</span>
+                                <span class="project-tag">Music</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                ETHEREAL <span class="yellow">GOLF</span>
+                            </h3>
+
+                            <p class="project-desc">
+                                A calm, aesthetic golf game built around simple aiming, relaxing visuals, and pleasing background music. No K-pop in this one yet — just a clean, mood-driven golf experience where the atmosphere carries the feel of the game.
+                            </p>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-btn slideshow-trigger" data-project="ethereal-golf" data-title="Ethereal Golf">
+                                    View Project →
+                                </button>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <!-- Project 3 -->
+                <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="0">
+                    <article class="project-card pink-hover">
+                        <div class="project-card-accent pink"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">Unity</span>
+                                <span class="project-tag">C#</span>
+                                <span class="project-tag">2D / Casual</span>
+                                <span class="project-tag">Timer System</span>
+                                <span class="project-tag">Gameplay Loop</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                SLEEPER'S <span class="pink">JOURNEY</span>
+                            </h3>
+
+                            <p class="project-desc">
+                                A small survival-style sleep protection game where the goal is to keep the person on screen asleep for a set amount of time. The player has to kill flies, use bug spray to keep bees away, and manage every disturbance before the sleeper wakes up.
+                            </p>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-btn pink-btn slideshow-trigger" data-project="sleepers-journey" data-title="Sleeper's Journey">
+                                    View Project →
+                                </button>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <!-- Project 4 -->
+                <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <article class="project-card">
+                        <div class="project-card-accent"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">Unity</span>
+                                <span class="project-tag">C#</span>
+                                <span class="project-tag">Racing</span>
+                                <span class="project-tag">Button Mash</span>
+                                <span class="project-tag">Local Play</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                BLOCKY <span class="yellow">DERBY</span>
+                            </h3>
+
+                            <p class="project-desc">
+                                A block-racing game inspired by the energy of Uma Musume-style races. You play as a block competing against other blocks, aggressively tapping the button to push your racer forward and fight for first place.
+                            </p>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-btn slideshow-trigger" data-project="blocky-derby" data-title="Blocky Derby">
+                                    View Project →
+                                </button>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <!-- Project 5 -->
+                <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="0">
+                    <article class="project-card pink-hover">
+                        <div class="project-card-accent pink"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">Unity</span>
+                                <span class="project-tag">C#</span>
+                                <span class="project-tag">Couch Co-op</span>
+                                <span class="project-tag">Low Poly</span>
+                                <span class="project-tag">Sports</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                WE PLAYING <span class="pink">BASKETBALL</span>
+                            </h3>
+
+                            <p class="project-desc">
+                                A simple couch co-op basketball game where players control LeBron-styled low-poly characters. The goal is straightforward: get the ball in the hoop and outscore whoever is sitting next to you.
+                            </p>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-btn pink-btn slideshow-trigger" data-project="we-playing-basketball" data-title="We Playing Basketball">
+                                    View Project →
+                                </button>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+
+                <!-- Project 6 -->
+                <div class="col-lg-6 col-md-6 col-12" data-aos="fade-up" data-aos-delay="100">
+                    <article class="project-card">
+                        <div class="project-card-accent"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">Unity</span>
+                                <span class="project-tag">C#</span>
+                                <span class="project-tag">Mirror Network</span>
+                                <span class="project-tag">Local Co-op</span>
+                                <span class="project-tag">Platform Fighter</span>
+                            </div>
+
+                            <h3 class="project-title">
+                                BALL <span class="yellow">BUSTERS</span>
+                            </h3>
+
+                            <p class="project-desc">
+                                A local co-op arena fighting game built on the Mirror networking system. Players control circular characters known as balls, each with a different feel, and battle in a boxing ring by aggressively bumping opponents out of the arena. Think Super Smash Bros energy, but with balls, impact, and chaos. This is my second-best UI project so far.
+                            </p>
+
+                            <div class="project-actions">
+                                <button type="button" class="project-btn slideshow-trigger" data-project="ball-busters" data-title="Ball Busters">
+                                    View Project →
+                                </button>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+
+            </div><!-- end .row -->
+
+
+            <!-- Cosmo Clash -->
+            <div class="row mt-3" data-aos="fade-up">
+                <div class="col-12">
+                    <article class="project-card pink-hover" style="border-color: var(--pink);">
+                        <div class="project-card-accent pink"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">HTML5</span>
+                                <span class="project-tag">CSS3</span>
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">Canvas API</span>
+                                <span class="project-tag">Web Game</span>
+                                <span class="project-tag">Itch.io</span>
+                                <span class="project-tag">Best UI</span>
+                            </div>
+
+                            <div class="row align-items-start">
+                                <div class="col-lg-8">
+                                    <h3 class="project-title">
+                                        COSMO CLASH <span class="pink">GRAND GRAVITY</span>
+                                    </h3>
+
+                                    <p class="project-desc">
+                                        A K-pop inspired survival card game built entirely in HTML, CSS, and JavaScript. Players build a subunit by selecting members across themed mission rounds including dance, vocal, rap, and concept challenges. It includes idol cards, an AI opponent, custom CSS animations, audio, and a Canvas API arena battle view.
+                                    </p>
+
+                                    <p class="project-desc">
+                                        This is one of my strongest UI-focused web games so far, so it sits after Ball Busters in the portfolio progression. The buttons below let visitors either play the hosted itch.io version or open the project slideshow to view the screenshots and files.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4 d-flex align-items-lg-end justify-content-lg-end mt-3 mt-lg-0">
+                                    <div class="project-actions justify-content-lg-end">
+                                        <!-- Replace this href with your real Cosmo Clash itch.io link -->
+                                        <a href="https://flyday-chinatown.itch.io/cosmo-clash" class="project-btn live-btn" target="_blank" rel="noopener noreferrer">
+                                            Play on Itch.io ↗
+                                        </a>
+
+                                        <button type="button" class="project-btn pink-btn slideshow-trigger" data-project="cosmo-clash" data-title="Cosmo Clash: Grand Gravity">
+                                            View Project →
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+
+            <!-- K-pop Manager -->
+            <div class="row mt-3" data-aos="fade-up">
+                <div class="col-12">
+                    <article class="project-card" style="border-color: var(--yellow);">
+                        <div class="project-card-accent"></div>
+                        <div class="project-card-body">
+
+                            <div class="project-tags">
+                                <span class="project-tag">Game Design</span>
+                                <span class="project-tag">C# Data Structures</span>
+                                <span class="project-tag">Unity Planned</span>
+                                <span class="project-tag">GDD v0.2</span>
+                                <span class="project-tag">Long-term Project</span>
+                                <span class="project-tag">In Development</span>
+                            </div>
+
+                            <div class="row align-items-start">
+                                <div class="col-lg-8">
+                                    <h3 class="project-title">
+                                        K-POP MANAGER <span class="yellow">— CONCEPT</span>
+                                    </h3>
+
+                                    <p class="project-desc">
+                                        A passion project in active development. Imagine Football Manager, but you're running a K-pop idol agency. GDD v0.2 covers the full idol attribute system, contract mechanics, a fictional SNS platform called Starfeed, a sasaeng system that creates risk as popularity grows, solo career branching, and full C# data structure designs for every system. Estimated Early Access timeline: 2–2.5 years from now. The scope is real. The commitment is locked in.
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4 d-flex flex-column align-items-lg-end gap-3 mt-3 mt-lg-0">
+                                    <div class="project-status-badge">
+                                        <span class="status-dot"></span>
+                                        IN DEVELOPMENT
+                                    </div>
+
+                                    <div class="project-actions justify-content-lg-end">
+                                        <button type="button" class="project-btn slideshow-trigger" data-project="kpop-manager" data-title="K-pop Manager Progress">
+                                            See Progress →
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Project slideshow lightbox -->
+    <div id="slideshowLightbox" class="slideshow-lightbox" aria-modal="true" role="dialog" aria-label="Project slideshow" style="display:none;">
+        <div class="slideshow-backdrop" id="slideshowBackdrop"></div>
+
+        <div class="slideshow-panel">
+            <div class="slideshow-header">
+                <h3 class="slideshow-title" id="slideshowTitle">Project Name</h3>
+                <button class="slideshow-close" id="slideshowClose" aria-label="Close slideshow">✕</button>
+            </div>
+
+            <div class="slideshow-image-wrap">
+                <img id="slideshowImg" class="slideshow-img" src="" alt="Project screenshot">
+
+                <button class="slideshow-arrow left" id="slidePrev" aria-label="Previous image">&#8249;</button>
+                <button class="slideshow-arrow right" id="slideNext" aria-label="Next image">&#8250;</button>
+            </div>
+
+            <div class="slideshow-dots" id="slideshowDots"></div>
+            <p class="slideshow-counter" id="slideshowCounter">1 / 1</p>
+        </div>
+    </div>
+
+
+    <!-- Project image data -->
+    <div id="projectImageData" style="display:none;" aria-hidden="true">
+
+        <!-- IT'S JUST A RAGE GAME -->
+        <div id="slides-rage-game">
+            <img src="assets/project-previews/rage-game-1.png" alt="It's Just a Rage Game screenshot 1">
+            <img src="assets/project-previews/rage-game-2.png" alt="It's Just a Rage Game screenshot 2">
+        </div>
+
+        <!-- ETHEREAL GOLF -->
+        <div id="slides-ethereal-golf">
+            <img src="assets/project-previews/ethereal-golf-1.png" alt="Ethereal Golf screenshot 1">
+            <img src="assets/project-previews/ethereal-golf-2.png" alt="Ethereal Golf screenshot 2">
+            <img src="assets/project-previews/ethereal-golf-3.png" alt="Ethereal Golf screenshot 3">
+        </div>
+
+        <!-- SLEEPER'S JOURNEY -->
+        <div id="slides-sleepers-journey">
+            <img src="assets/project-previews/sleepers-journey-1.png" alt="Sleeper's Journey screenshot 1">
+            <img src="assets/project-previews/sleepers-journey-2.png" alt="Sleeper's Journey screenshot 2">
+            <img src="assets/project-previews/sleepers-journey-3.png" alt="Sleeper's Journey screenshot 3">
+            <img src="assets/project-previews/sleepers-journey-4.png" alt="Sleeper's Journey screenshot 4">
+        </div>
+
+        <!-- BLOCKY DERBY -->
+        <div id="slides-blocky-derby">
+            <img src="assets/project-previews/blocky-derby-1.png" alt="Blocky Derby screenshot 1">
+            <img src="assets/project-previews/blokcy-derby-2.png" alt="Blocky Derby screenshot 2">
+            <img src="assets/project-previews/blokcy-derby-3.png" alt="Blocky Derby screenshot 3">
+            <img src="assets/project-previews/blokcy-derby-4.png" alt="Blocky Derby screenshot 4">
+        </div>
+
+        <!-- WE PLAYING BASKETBALL -->
+        <div id="slides-we-playing-basketball">
+            <img src="assets/project-previews/playing-basketball-1.png" alt="We Playing Basketball screenshot 1">
+            <img src="assets/project-previews/playing-basketball-2.png" alt="We Playing Basketball screenshot 2">
+        </div>
+
+        <!-- BALL BUSTERS -->
+        <div id="slides-ball-busters">
+            <img src="assets/project-previews/ball-busters-1.png" alt="Ball Busters screenshot 1">
+            <img src="assets/project-previews/ball-buster-2.png" alt="Ball Busters screenshot 2">
+            <img src="assets/project-previews/ball-busters-3.png" alt="Ball Busters screenshot 3">
+        </div>
+
+        <!-- COSMO CLASH -->
+        <div id="slides-cosmo-clash">
+            <img src="assets/project-previews/cosmo-clash-1.png" alt="Cosmo Clash card selection screen">
+            <img src="assets/project-previews/cosmo-clash-2.png" alt="Cosmo Clash battle arena screen">
+            <img src="assets/project-previews/cosmo-clash-3.png" alt="Cosmo Clash concert end screen">
+            <img src="assets/project-previews/cosmo-clash-4.png" alt="Cosmo Clash card collection screen">
+        </div>
+
+        <!-- K-POP MANAGER PROGRESS -->
+        <div id="slides-kpop-manager">
+            <img src="assets/project-previews/kpop-manager-1.png" alt="K-pop Manager progress screenshot 1">
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <span class="footer-logo">TT<span class="logo-dot">.</span></span>
+                <span class="footer-copy">© 2026 Thapelo Thoke. All rights reserved.</span>
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Main script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
